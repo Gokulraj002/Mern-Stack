@@ -6,6 +6,7 @@ const gradesController = require("./gradesController");
 const studentmanage = require("./studentmanage");
 const activestu = require("./activestu.js");
 const fees = require("./fees.js");
+require('dotenv').config
 
 const app = express();
 const PORT = process.env.PORT || 5000;

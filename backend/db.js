@@ -1,13 +1,13 @@
 const { MongoClient } = require("mongodb");
-
-const uri = "mongodb://localhost:27017";
+require('dotenv').config()
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 let db;
 
 async function connectDB() {
     try {
         await client.connect();
-        db = client.db("sms");
+        db = client.db("student");
         return db; 
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
